@@ -21,7 +21,7 @@
             ]
           },
           {
-            "source": "/vercel_app_domain_name/(.*)",
+            "source": "/proyecovuefinal/(.*)",
             "headers": [
               { "key": "Access-Control-Allow-Origin", "value": "*" }
             ]
