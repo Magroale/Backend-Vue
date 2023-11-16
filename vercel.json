@@ -15,15 +15,5 @@
         }
       ],
       "cleanUrls": true,
-      "trailingSlash": true,
-      "rewrites": [
-        {
-          "source": "/static/(.)",
-          "destination": "/static/$1"
-        },
-        {
-            "source": "/(.)",
-            "destination": "proyecovuefinal/wsgi.py"
-          }
-    ]
+      "trailingSlash": true
 }
