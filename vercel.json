@@ -1,41 +1,27 @@
 {
+    "version": 2,
     "builds": [
-        {
-          "src": "proyecovuefinal/wsgi.py",
-          "use": "@vercel/python",
-          "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-        },
-        {
-          "src": "build_files.sh",
-          "use": "@vercel/static-build",
-          "config": {
-            "distDir": "staticfiles"
-          }
+      {
+        "src": "proyecovuefinal/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
         }
-      ],
-      "headers": [
-          {
-            "source": "/(.*)",
-            "headers": [
-              { "key": "Access-Control-Allow-Origin", "value": "*" }
-            ]
-          },
-          {
-            "source": "/proyecovuefinal/(.*)",
-            "headers": [
-              { "key": "Access-Control-Allow-Origin", "value": "*" }
-            ]
-          }  
-      ],
-      "rewrites": [
-        {
-          "source": "/static/(.)",
-          "destination": "/static/$1"
-        },
-        {
-          "source": "/(.)",
-          "destination": "proyecovuefinal/wsgi.py"
-        }
-      ]
-
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "proyecovuefinal/wsgi.py"
+      }
+    ]
 }
