@@ -33,6 +33,12 @@
           "source": "/(.)",
           "destination": "proyecovuefinal/wsgi.py"
         }
-      ]
+      ],
+      "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "proyecovuefinal/wsgi.py"
+        }
+    ]
 
 }
