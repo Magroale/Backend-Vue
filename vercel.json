@@ -10,9 +10,8 @@
             "dest": "proyecovuefinal/wsgi.py"
         }
     ],
-    "headers": [
-        {
-          "source": "/api/(.*)",
+    "headers": [{
+          "source": "/infoViajes/(.*)",
           "headers": [
             { "key": "Access-Control-Allow-Credentials", "value": "true" },
             { "key": "Access-Control-Allow-Origin", "value": "*" },
